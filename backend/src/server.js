@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
+import path from 'path';
 import swaggerUi from 'swagger-ui-express';
 import { initDb } from './database/db.js';
 import { swaggerSpec } from './config/swagger.js';
@@ -9,7 +10,9 @@ import rolesRoutes from './routes/roles.js';
 import usuariosRoutes from './routes/usuarios.js';
 import estabelecimentosRoutes from './routes/estabelecimentos.js';
 
-dotenv.config();
+dotenv.config({
+  path: path.resolve(process.cwd(), '.env')
+});
 
 const app = express();
 const PORT = process.env.PORT || 3001;
