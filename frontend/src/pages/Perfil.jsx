@@ -61,7 +61,7 @@ export default function Perfil() {
       {/* Avatar e nome */}
       <div className="flex flex-col items-center mb-6">
         <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-3xl text-white font-bold shadow-lg mb-3">
-          {usuario.nome?.[0]}
+          🥺
         </div>
         <h1 className="text-xl font-extrabold text-gray-900">{usuario.nome}</h1>
         <span className="text-xs text-gray-400 mt-0.5">{tipo === 'estabelecimento' ? '🏢 Estabelecimento' : '👤 Usuário'}</span>

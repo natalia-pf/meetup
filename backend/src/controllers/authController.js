@@ -29,6 +29,7 @@ export async function cadastrarUsuario(req, res) {
     const token = gerarToken({ id: result.lastInsertRowid, tipo: 'usuario' });
     console.log(token);
     const usuario = db.prepare('SELECT id, nome, email, bio, foto, interesses, cidade FROM usuarios WHERE id = ?').get(result.lastInsertRowid);
+    usuario.interesses = JSON.parse(usuario.interesses)
 
     res.status(201).json({ token, usuario });
   } catch (err) {
