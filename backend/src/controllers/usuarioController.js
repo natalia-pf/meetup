@@ -9,7 +9,7 @@ export function getPerfil(req, res) {
 
   if (!usuario) return res.status(404).json({ erro: 'Usuário não encontrado' });
 
-  usuario.interesses = JSON.parse(usuario.interesses || '[]');
+  usuario.interesses = JSON.parse(usuario.interesses || []);
   res.json(usuario);
 }
 
@@ -22,7 +22,7 @@ export function getPerfilPublico(req, res) {
 
   if (!usuario) return res.status(404).json({ erro: 'Usuário não encontrado' });
 
-  usuario.interesses = JSON.parse(usuario.interesses || '[]');
+  usuario.interesses = JSON.parse(usuario.interesses || []);
   res.json(usuario);
 }
 
@@ -50,7 +50,7 @@ export function editarPerfil(req, res) {
   );
 
   const atualizado = db.prepare('SELECT id, nome, email, bio, foto, interesses, cidade FROM usuarios WHERE id = ?').get(req.usuario.id);
-  atualizado.interesses = JSON.parse(atualizado.interesses || '[]');
+  atualizado.interesses = JSON.parse(atualizado.interesses|| []);
   res.json(atualizado);
 }
 

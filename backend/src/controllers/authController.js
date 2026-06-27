@@ -53,7 +53,7 @@ export async function loginUsuario(req, res) {
 
     const token = gerarToken({ id: usuario.id, tipo: 'usuario' });
     const { senha: _, ...dados } = usuario;
-    dados.interesses = JSON.parse(dados.interesses || '[]');
+    dados.interesses = JSON.parse(dados.interesses || []);
 
     res.json({ token, usuario: dados });
   } catch (err) {

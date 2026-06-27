@@ -82,7 +82,7 @@ export default function Perfil() {
             <div className="card p-4">
               <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Interesses</h3>
               <div className="flex flex-wrap gap-2">
-                {usuario.interesses.map((i) => (
+                {usuario.interesses.length > 0 && usuario.interesses?.map((i) => (
                   <span key={i} className="badge bg-primary-50 text-primary-600">{i}</span>
                 ))}
               </div>
