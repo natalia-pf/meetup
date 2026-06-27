@@ -1,4 +1,0 @@
-PORT=3001
-JWT_SECRET=meetup_secret_2026_change_in_production
-NODE_ENV=development
-DB_PATH=./src/database/meetup.db
